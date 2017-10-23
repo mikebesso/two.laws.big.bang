@@ -20,3 +20,4 @@ Depends:
   testthat,
   stringr
 RoxygenNote: 6.0.1
+Suggests: testthat

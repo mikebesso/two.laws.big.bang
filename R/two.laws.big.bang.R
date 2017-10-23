@@ -12,3 +12,7 @@ NULL
 #   library(Hmisc)
 #   library(wrapr)
 # }
+
+
+
+devtools::use_testthat()
