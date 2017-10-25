@@ -14,5 +14,6 @@ NULL
 # }
 
 
-
-devtools::use_testthat()
+if (!devtools::uses_testthat()){
+  devtools::use_testthat()
+}

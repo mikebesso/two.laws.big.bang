@@ -11,13 +11,15 @@ Encoding: UTF-8
 LazyData: true
 Depends:
   magrittr,
-  checkmate,
-  devtools,
   pryr,
-  gtools,
   wrapr,
   R6,
-  testthat,
   stringr
+includes:
+  devtools,
+  gtools,
+  checkmate,
+  assertive,
+  rprojroot
 RoxygenNote: 6.0.1
 Suggests: testthat
