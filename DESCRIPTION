@@ -14,7 +14,9 @@ Depends:
   pryr,
   wrapr,
   R6,
-  stringr
+  stringr,
+  readr,
+  rio
 includes:
   devtools,
   gtools,
@@ -22,4 +24,6 @@ includes:
   assertive,
   rprojroot
 RoxygenNote: 6.0.1
-Suggests: testthat
+Suggests: 
+  testthat,
+  config

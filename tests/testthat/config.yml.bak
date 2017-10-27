@@ -1,0 +1,9 @@
+default:
+  jobs:
+    abc:
+      path: "abc/abc"
+      schedule: "weekly"
+    def:
+       path: "def/def"
+       schedule: "daily"
+

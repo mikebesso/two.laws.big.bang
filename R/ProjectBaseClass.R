@@ -7,15 +7,46 @@ ProjectBaseClass <- R6Class(
   public = list(
 
     Folders = list(),
+    ConfigName = NA_character_,
+    Config = NULL,
+
+    HasConfig = function(){
+      return(!is.null(self$Config))
+    },
+
+    GetConfig = function(config){
+
+      self$Config <- tryCatch(
+        {
+          config::get(
+            config = self$ConfigName
+          )
+        },
+        error = function(e){
+          NULL
+        }
+      )
 
 
-    initialize = function(verbose = FALSE, unitTesting = TRUE){
+      return(self$Config)
+    },
+
+    initialize = function(
+      configName = Sys.getenv("R_CONFIG_ACTIVE", "default"),
+      verbose = FALSE,
+      unitTesting = TRUE
+    ){
       super$initialize(verbose = verbose)
 
-      self$Folders$Project = rprojroot::find_rstudio_root_file()
-      self$Folders$TestThat = rprojroot::find_testthat_root_file()
+      self$Folders$Project <- rprojroot::find_rstudio_root_file()
+      self$Folders$TestThat <- rprojroot::find_testthat_root_file()
 
-      self$Folders$TestThatTemp = file.path(self$Folders$TestThat, "temp")
+      self$Folders$TestThatTemp <- file.path(self$Folders$TestThat, "temp")
+
+      self$ConfigName <- configName
+
+      self$GetConfig()
+
 
       if (unitTesting){
         dir.create(self$Folders$TestThatTemp, showWarning = FALSE, recursive = TRUE)
