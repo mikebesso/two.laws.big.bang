@@ -22,7 +22,8 @@ includes:
   gtools,
   checkmate,
   assertive,
-  rprojroot
+  rprojroot,
+  settings
 RoxygenNote: 6.0.1
 Suggests: 
   testthat,
