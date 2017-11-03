@@ -28,3 +28,10 @@ RoxygenNote: 6.0.1
 Suggests: 
   testthat,
   config
+Collate: 
+    'Asserts.R'
+    'BaseClass.R'
+    'FindFolder.R'
+    'ProjectBaseClass.R'
+    'options.R'
+    'two.laws.big.bang.R'

@@ -1,3 +1,4 @@
+#' @include FindFolder.R
 
 #' @export
 ProjectBaseClass <- R6Class(
@@ -38,10 +39,10 @@ ProjectBaseClass <- R6Class(
     ){
       super$initialize(verbose = verbose)
 
-      self$Folders$Project <- rprojroot::find_rstudio_root_file()
-      self$Folders$TestThat <- rprojroot::find_testthat_root_file()
+      self$Folders$Project <- FindProjectRootFolder()
 
-      self$Folders$TestThatTemp <- file.path(self$Folders$TestThat, "temp")
+      self$Folders$TestThat <- "" #rprojroot::find_testthat_root_file()
+      self$Folders$TestThatTemp <- "" #file.path(self$Folders$TestThat, "temp")
 
       self$ConfigName <- configName
 
