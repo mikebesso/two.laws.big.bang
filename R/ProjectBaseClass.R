@@ -41,8 +41,8 @@ ProjectBaseClass <- R6Class(
 
       self$Folders$Project <- FindProjectRootFolder()
 
-      self$Folders$TestThat <- "" #rprojroot::find_testthat_root_file()
-      self$Folders$TestThatTemp <- "" #file.path(self$Folders$TestThat, "temp")
+      self$Folders$TestThat <- file.path(self$Folders$Project, "tests", "testthat")
+      self$Folders$TestThatTemp <-  file.path(self$Folders$TestThat, "temp")
 
       self$ConfigName <- configName
 

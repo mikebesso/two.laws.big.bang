@@ -10,28 +10,45 @@ License: What license is it under?
 Encoding: UTF-8
 LazyData: true
 Depends:
-  magrittr,
   pryr,
   wrapr,
   R6,
   stringr,
+  stringi,
+  lucr,
   readr,
-  rio
-includes:
+  plyr,
+  rlist,
+  broom, 
+  dplyr,
+  forcats,
+  ggplot2,
+  haven,
+  httr,
+  hms,
+  jsonlite, 
+  lubridate, 
+  magrittr
+Suggests:
   devtools,
   gtools,
   checkmate,
   assertive,
-  rprojroot,
-  settings
-RoxygenNote: 6.0.1
-Suggests: 
+  settings,
   testthat,
-  config
+  config,
+  digest
+RoxygenNote: 6.0.1
 Collate: 
     'Asserts.R'
     'BaseClass.R'
     'FindFolder.R'
     'ProjectBaseClass.R'
+    'hash.R'
+    'lists.R'
     'options.R'
+    'packages.R'
+    'plyrs.R'
+    'strings.R'
+    'tidy_plus.R'
     'two.laws.big.bang.R'
