@@ -34,6 +34,8 @@ AssertAllMatchFixed <- assertive::assert_all_are_matching_fixed
 #' @export
 AssertAllMatchPattern <- assertive::assert_all_are_matching_regex
 
-
 #' @export
 AssertIsA <- assertive::assert_is_all_of
+
+#' @export
+AssertAllArePositive <- assertive::assert_all_are_positive

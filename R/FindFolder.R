@@ -26,4 +26,28 @@ FindProjectRootFolder <- function(path = getwd()){
   return(Folder)
 }
 
+#' @export
+FindProjectTestsFolder <- function(path = getwd()){
+  file.path(
+    FindProjectRootFolder(path),
+    "tests"
+  )
+}
+
+#' @export
+FindProjectTestThatFolder <- function(path = getwd()){
+  file.path(
+    FindProjectTestsFolder(path),
+    "testthat"
+  )
+}
+
+
+#' @export
+FindPackageCodeFolder <- function(path = getwd()){
+  file.path(
+    FindProjectRootFolder(path),
+    "R"
+  )
+}
 

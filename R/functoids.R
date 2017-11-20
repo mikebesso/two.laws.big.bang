@@ -1,0 +1,3 @@
+
+#' @export
+partial <- pryr::partial

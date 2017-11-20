@@ -1,32 +1,40 @@
+#' @include plyrs.R
+#' @include functoids.R
+NULL
 
 #' @export
-str_Upper <- function(.str){
-  toupper(.str);
-}
+str_Upper <- toupper
 
 #' @export
-str_Lower <- function(.str){
-  tolower(.str);
-}
-
-
-#' @export
-str_Trim <- function(.string){
-  str_trim(.string, side = "both");
-}
+str_Lower <- tolower
 
 
 #' @export
-str_TrimLeft <- function(.string){
-  str_trim(.string, side = "left");
-}
+str_Trim <- partial(stringr::str_trim, side = "both")
 
+#' @export
+str_TrimLeft <- partial(stringr::str_trim, side = "left")
 
 
 #' @export
-str_TrimRight <- function(.string){
-  str_trim(.string, side = "right");
-}
+str_TrimRight <- partial(stringr::str_trim, side = "right")
+
+
+#' #' @export
+#' str_Trim <- function(.string){
+#'   str_trim(.string, side = "both");
+#' }
+#'
+#'
+#' #' @export
+#' str_TrimLeft <- function(.string){
+#'   str_trim(.string, side = "left");
+#' }
+#'
+#' #' @export
+#' str_TrimRight <- function(.string){
+#'   str_trim(.string, side = "right");
+#' }
 
 
 #' @export
@@ -136,9 +144,9 @@ str_Replace <- function(.str, .pattern, .replacement, .all = TRUE, .fixed = FALS
   pattern <- ifelse(.fixed, fixed(.pattern), .pattern);
 
   if(.all){
-    retval <- str_replace_all(.str, pattern, .replacement);
+    retval <- stringr::str_replace_all(.str, pattern, .replacement);
   } else {
-    retval <- str_replace(.str, pattern, .replacement);
+    retval <- stringr::str_replace(.str, pattern, .replacement);
   }
 
   return(retval);
@@ -162,3 +170,28 @@ str_DoubleQuote <- function(text){
 str_SingleQuote <- function(text){
   paste0("'", text, "'")
 }
+
+
+#' @export
+str_SplitCSV <- function(text){
+
+  CSV <- llply(
+    text,
+    function(text){
+      str_Trim(
+        str_split_fixed(text, ",", Inf)[1,]
+      )
+    }
+  )
+
+
+
+  if (length(CSV) == 1){
+    CSV <- CSV[[1]]
+  }
+
+  return(CSV)
+}
+
+
+

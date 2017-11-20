@@ -1,3 +1,8 @@
+NULL
+
+#' @export
+R6Class <-  R6::R6Class
+
 #' BaseClass
 #'
 #' A helper class
@@ -32,8 +37,20 @@ BaseClass <- R6::R6Class(
 
     initialize = function(verbose = FALSE){
       self$Verbose = verbose
+      private$.Initialized = TRUE
+    },
+
+    Validate = function(){
+      return(TRUE)
     }
+  ),
+  active = list(
+    Initialized = function(){
+      return(private$.Initialized)
+    }
+  ),
 
-
+  private = list(
+    .Initialized = FALSE
   )
 )

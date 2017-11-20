@@ -1,19 +1,22 @@
-library(testthat)
-
-setwd(rprojroot::find_testthat_root_file())
-
-context("HasConfig")
+library(two.laws.big.bang)
 
 
-test_that(
+
+SetTestContext("HasConfig")
+
+
+CreateTestCase(
   "Does Not Have Config",
   {
-    ConfigPath <- file.path(rprojroot::find_testthat_root_file(), "config.yml")
+    TestThatFolder <- FindProjectTestThatFolder()
+    setwd(TestThatFolder)
+    on.exit(setwd(FindProjectTestsFolder()))
+
+    ConfigPath <- file.path(TestThatFolder, "config.yml")
 
     if (file.exists(ConfigPath)) {
       file.remove(ConfigPath)
     }
-
 
     Project <- ProjectBaseClass$new(unitTesting = TRUE, verbose = TRUE)
 
@@ -25,11 +28,14 @@ test_that(
 
 
 
-test_that(
+CreateTestCase(
   "Has Config",
   {
+    TestThatFolder <- FindProjectTestThatFolder()
+    setwd(TestThatFolder)
+    on.exit(setwd(FindProjectTestsFolder()))
 
-    ConfigPath <- file.path(rprojroot::find_testthat_root_file(), "config.yml")
+    ConfigPath <- file.path(TestThatFolder, "config.yml")
     ConfigBackupPath <- paste0(ConfigPath, ".bak")
 
     if (file.exists(ConfigPath)) {
@@ -51,3 +57,4 @@ test_that(
 )
 
 
+setwd(FindPackageCodeFolder())

@@ -1,7 +1,7 @@
 #' @include FindFolder.R
 
 #' @export
-ProjectBaseClass <- R6Class(
+ProjectBaseClass <- R6::R6Class(
   "ProjectBaseClass",
   inherit = BaseClass,
 
@@ -41,7 +41,8 @@ ProjectBaseClass <- R6Class(
 
       self$Folders$Project <- FindProjectRootFolder()
 
-      self$Folders$TestThat <- file.path(self$Folders$Project, "tests", "testthat")
+      self$Folders$Tests <- file.path(FindProjectTestsFolder())
+      self$Folders$TestThat <- file.path(FindProjectTestThatFolder())
       self$Folders$TestThatTemp <-  file.path(self$Folders$TestThat, "temp")
 
       self$ConfigName <- configName

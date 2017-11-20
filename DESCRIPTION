@@ -9,10 +9,9 @@ Description: More about what it does (maybe more than one line)
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
-Depends:
+Imports:
   pryr,
   wrapr,
-  R6,
   stringr,
   stringi,
   lucr,
@@ -30,6 +29,7 @@ Depends:
   lubridate, 
   magrittr
 Suggests:
+  tools,
   devtools,
   gtools,
   checkmate,
@@ -43,7 +43,12 @@ Collate:
     'Asserts.R'
     'BaseClass.R'
     'FindFolder.R'
+    'MatchArgs.R'
+    'Pipes.R'
     'ProjectBaseClass.R'
+    'TestThat_plus.R'
+    'files_plus.R'
+    'functoids.R'
     'hash.R'
     'lists.R'
     'options.R'
