@@ -4,9 +4,31 @@ NULL
 
 #' @export
 str_Upper <- toupper
+#' @export
+str_upper <- toupper
 
 #' @export
 str_Lower <- tolower
+#' @export
+str_lower <- tolower
+
+#' @export
+str_replace_all <- stringr::str_replace_all
+
+#' @export
+str_replace <- stringr::str_replace
+
+
+#' @export
+str_Detect <- stringr::str_detect
+#' @export
+str_detect <- stringr::str_detect
+
+#' @export
+fixed <- stringr::fixed
+
+#' @export
+str_split <- stringr::str_split
 
 
 #' @export
