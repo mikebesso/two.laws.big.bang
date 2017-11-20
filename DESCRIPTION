@@ -37,7 +37,8 @@ Suggests:
   settings,
   testthat,
   config,
-  digest
+  digest, 
+  R6
 RoxygenNote: 6.0.1
 Collate: 
     'Asserts.R'

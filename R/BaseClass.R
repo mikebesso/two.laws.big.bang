@@ -1,13 +1,17 @@
 NULL
 
 #' @export
-R6Class <-  R6::R6Class
+R6Class <- R6::R6Class
+
+#' @export
+CreateClass <- R6::R6Class
+
 
 #' BaseClass
 #'
 #' A helper class
 #' @export
-BaseClass <- R6::R6Class(
+BaseClass <- R6Class(
   "BaseClass",
   public = list(
 
