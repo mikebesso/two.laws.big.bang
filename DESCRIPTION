@@ -20,6 +20,7 @@ Imports:
   rlist,
   broom, 
   dplyr,
+  rlist,
   forcats,
   ggplot2,
   haven,
@@ -48,6 +49,7 @@ Collate:
     'Pipes.R'
     'ProjectBaseClass.R'
     'TestThat_plus.R'
+    'environments.R'
     'files_plus.R'
     'functoids.R'
     'hash.R'
