@@ -8,10 +8,24 @@ rdply <- function(.data, .fun){
   )
 }
 
+#' @export
+l_ply <- plyr::l_ply
+
+#' @export
+llply <- plyr::llply
+
+#' @export
+ldply <- plyr::ldply
+
+
+#' @export
+a_ply <- plyr::a_ply
+
+
 # row to _
 #' @export
 r_ply <- function(.data, .fun, ...){
-  a_ply(
+  plyr::a_ply(
     .data = .data,
     .margins = 1,
     .fun = .fun,
@@ -22,7 +36,7 @@ r_ply <- function(.data, .fun, ...){
 # column to dataframe
 #' @export
 cdply <- function(.data, .fun){
-  adply(
+  plyr::adply(
     .data = .data,
     .margins = 2,
     .fun = .fun
@@ -33,7 +47,7 @@ cdply <- function(.data, .fun){
 # column to _
 #' @export
 cdply <- function(.data, .fun){
-  a_ply(
+  plyr::a_ply(
     .data = .data,
     .margins = 2,
     .fun = .fun

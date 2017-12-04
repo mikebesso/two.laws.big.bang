@@ -18,6 +18,12 @@ str_replace_all <- stringr::str_replace_all
 #' @export
 str_replace <- stringr::str_replace
 
+#' @export
+str_split_fixed <- stringr::str_split_fixed
+
+#' @export
+str_split <- stringr::str_split
+
 
 #' @export
 str_Detect <- stringr::str_detect
