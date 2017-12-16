@@ -201,13 +201,13 @@ str_SingleQuote <- function(text){
 
 
 #' @export
-str_SplitCSV <- function(text){
+str_SplitCSV <- function(text, sep = ","){
 
   CSV <- llply(
     text,
     function(text){
       str_Trim(
-        str_split_fixed(text, ",", Inf)[1,]
+        str_split_fixed(text, sep, Inf)[1,]
       )
     }
   )
@@ -221,5 +221,9 @@ str_SplitCSV <- function(text){
   return(CSV)
 }
 
+#' @export
+str_RemoveWhitespace <- function(text){
+  str_replace_all(text, "\\s", "")
+}
 
 

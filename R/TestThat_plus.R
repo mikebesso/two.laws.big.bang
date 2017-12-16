@@ -13,3 +13,6 @@ UseTestThat <- function(){
     devtools::use_testthat()
   }
 }
+
+#' @export
+expect_equal <- testthat::expect_equal
