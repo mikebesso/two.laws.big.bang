@@ -101,6 +101,12 @@ filter <- dplyr::filter;
 #' @export
 df_filter <- dplyr::filter;
 
+#' @export
+rename <- dplyr::rename;
+#' @export
+df_rename <- dplyr::rename;
+
+
 
 #' @export
 if_else <- dplyr::if_else
