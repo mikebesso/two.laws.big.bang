@@ -2,6 +2,9 @@
 
 export("%<>%")
 export("%>%")
+export(AddIn_FindAndReplace)
+export(AddIn_InsertIn)
+export(AddIn_Subset)
 export(AssertAllArePositive)
 export(AssertAllEquals)
 export(AssertAllMatchFixed)

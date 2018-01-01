@@ -1,0 +1,19 @@
+Name: Insert %in%
+Description: Inserts `%in%` at the cursor position.
+Binding: AddIn_InsertIn
+Interactive: false
+
+Name: Find and Replace
+Description: Find and replace words in a document.
+Binding: AddIn_FindAndReplace
+Interactive: true
+
+Name: Reformat R Code
+Description: Reformat R code using 'formatR::tidy_source()'.
+Binding: AddIn_Reformat
+Interactive: true
+
+Name: Subset a Data Frame
+Description: Interactively subset a data frame.
+Binding: AddIn_Subset
+Interactive: true

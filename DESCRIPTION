@@ -28,7 +28,11 @@ Imports:
   hms,
   jsonlite, 
   lubridate, 
-  magrittr
+  magrittr, 
+  shiny,
+  miniUI,
+  rstudioapi,
+  formatR
 Suggests:
   tools,
   devtools,
@@ -42,6 +46,11 @@ Suggests:
   R6
 RoxygenNote: 6.0.1
 Collate: 
+    'AddIn_FindAndReplace.R'
+    'AddIn_InsertIn.R'
+    'AddIn_Reformat.R'
+    'AddIn_Subset.R'
+    'AddIn_Utils.R'
     'Asserts.R'
     'BaseClass.R'
     'FindFolder.R'

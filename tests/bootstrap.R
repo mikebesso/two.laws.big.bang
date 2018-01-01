@@ -41,7 +41,10 @@ packages <-
       "timeDate",
       "png",
       "rmdformats",
-      "htmlwidgets"
+      "htmlwidgets",
+      "miniUI",
+      "formatR",
+      "roxygen2"
     ),
     rownames(installed.packages())
   );
