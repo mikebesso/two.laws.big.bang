@@ -12,29 +12,29 @@ str_Lower <- tolower
 #' @export
 str_lower <- tolower
 
-#' @export
-str_replace_all <- stringr::str_replace_all
+#' #' @export
+#' str_replace_all <- stringr::str_replace_all
 
-#' @export
-str_replace <- stringr::str_replace
+#' #' @export
+#' str_replace <- stringr::str_replace
 
-#' @export
-str_split_fixed <- stringr::str_split_fixed
+#' #' @export
+#' str_split_fixed <- stringr::str_split_fixed
 
-#' @export
-str_split <- stringr::str_split
+#' #' @export
+#' str_split <- stringr::str_split
 
 
 #' @export
 str_Detect <- stringr::str_detect
-#' @export
-str_detect <- stringr::str_detect
+#' #' @export
+#' str_detect <- stringr::str_detect
 
-#' @export
-fixed <- stringr::fixed
+#' #' @export
+#' fixed <- stringr::fixed
 
-#' @export
-str_split <- stringr::str_split
+#' #' @export
+#' str_split <- stringr::str_split
 
 
 #' @export
@@ -48,21 +48,6 @@ str_TrimLeft <- partial(stringr::str_trim, side = "left")
 str_TrimRight <- partial(stringr::str_trim, side = "right")
 
 
-#' #' @export
-#' str_Trim <- function(.string){
-#'   str_trim(.string, side = "both");
-#' }
-#'
-#'
-#' #' @export
-#' str_TrimLeft <- function(.string){
-#'   str_trim(.string, side = "left");
-#' }
-#'
-#' #' @export
-#' str_TrimRight <- function(.string){
-#'   str_trim(.string, side = "right");
-#' }
 
 
 #' @export
@@ -199,20 +184,32 @@ str_SingleQuote <- function(text){
   paste0("'", text, "'")
 }
 
+#' @export
+str_IsFixed <- function(text){
+  return(is(text, "fixed"))
+}
+
+#' @export
+str_Fixed <- function(text){
+  if(str_IsFixed(text))
+    return(text)
+
+  return(fixed(text))
+}
 
 #' @export
 str_SplitCSV <- function(text, sep = ","){
+
+  Separator <- str_Fixed(sep)
 
   CSV <- llply(
     text,
     function(text){
       str_Trim(
-        str_split_fixed(text, sep, Inf)[1,]
+        str_split_fixed(text, Separator, Inf)[1,]
       )
     }
   )
-
-
 
   if (length(CSV) == 1){
     CSV <- CSV[[1]]
@@ -221,9 +218,13 @@ str_SplitCSV <- function(text, sep = ","){
   return(CSV)
 }
 
+
+#' @export
+str_SplitPipeSeparatedValues <- function(text){
+  str_SplitCSV(text, sep = "|")
+}
+
 #' @export
 str_RemoveWhitespace <- function(text){
   str_replace_all(text, "\\s", "")
 }
-
-

@@ -9,11 +9,13 @@ Description: More about what it does (maybe more than one line)
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
+Depends:
+  magrittr, 
+  stringr,
+  stringi
 Imports:
   pryr,
   wrapr,
-  stringr,
-  stringi,
   lucr,
   readr,
   plyr,
@@ -28,7 +30,6 @@ Imports:
   hms,
   jsonlite, 
   lubridate, 
-  magrittr, 
   shiny,
   miniUI,
   rstudioapi,
@@ -50,6 +51,7 @@ Collate:
     'AddIn_InsertIn.R'
     'AddIn_Reformat.R'
     'AddIn_Subset.R'
+    'AddIn_Terminal.R'
     'AddIn_Utils.R'
     'Asserts.R'
     'BaseClass.R'

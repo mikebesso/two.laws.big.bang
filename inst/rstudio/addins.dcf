@@ -17,3 +17,8 @@ Name: Subset a Data Frame
 Description: Interactively subset a data frame.
 Binding: AddIn_Subset
 Interactive: true
+
+Name: terminal
+Description: Open a terminal window.
+Binding: AddIn_Terminal
+Interactive: false

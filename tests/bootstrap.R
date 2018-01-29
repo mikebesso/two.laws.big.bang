@@ -5,6 +5,7 @@ rownames(installed.packages())
 packages <-
   setdiff(
     c(
+      "tidyverse",
       "pryr",
       "wrapr",
       "stringr",
