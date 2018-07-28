@@ -45,7 +45,8 @@ packages <-
       "htmlwidgets",
       "miniUI",
       "formatR",
-      "roxygen2"
+      "roxygen2",
+      "emojifont"
     ),
     rownames(installed.packages())
   );
